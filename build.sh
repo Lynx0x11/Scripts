@@ -22,22 +22,18 @@ export CACHE
 export KBUILD_COMPILER_STRING
 ARCH=arm64
 export ARCH
-KBUILD_BUILD_HOST="neOliT"
+KBUILD_BUILD_HOST="NeZuko"
 export KBUILD_BUILD_HOST
-KBUILD_BUILD_USER="sarthakroy2002"
+KBUILD_BUILD_USER="NeZuko"
 export KBUILD_BUILD_USER
-DEVICE="Realme C3/Narzo 10A (Realme Monet)"
+DEVICE="RM6785"
 export DEVICE
-CODENAME="RMX2020"
+CODENAME="RM6785"
 export CODENAME
-DEFCONFIG="RMX2020_defconfig"
+DEFCONFIG="RM6785_defconfig"
 export DEFCONFIG
-COMMIT_HASH=$(git rev-parse --short HEAD)
-export COMMIT_HASH
 PROCS=$(nproc --all)
 export PROCS
-STATUS=BETA
-export STATUS
 source "${HOME}"/.bashrc && source "${HOME}"/.profile
 if [ $CACHE = 1 ]; then
     ccache -M 100G
@@ -65,8 +61,6 @@ compile() {
         exit 1
     fi
 
-    git clone --depth=1 https://github.com/sarthakroy2002/AnyKernel3.git AnyKernel
-    cp out/arch/arm64/boot/Image.gz-dtb AnyKernel
 }
 
 deps
